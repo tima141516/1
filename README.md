@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands
 
 f = open('main.py', 'r', encoding='utf-8')
@@ -23,7 +24,13 @@ async def on_ready():
 @bot.command()
 async def hello(ctx):
     await ctx.send(f'Добрый день! Я бот {bot.user}!')
+@bot.command()
+async def dela(ctx):
+    await ctx.send(f'хорошо,а у тебя {bot.user}!')
 
+@bot.command()
+async def bye(ctx):
+    await ctx.send(f'пока {bot.user}!')
 
 @bot.command()
 async def add(ctx, left: int, right: int):
@@ -62,11 +69,15 @@ async def help_(ctx):
     """Функция возвращает список выполняемых ботом команд"""
     await ctx.send('Воспользуйтесь очень важной подсказкой:\n'
                    '$hello - приветствие бота\n'
+                   '$dela - настроение бота\n'
                    '$add <два произвольных числа> - сложение двух чисел\n'
                    '$heh <количество повторов> - вывод размноженного слова "heh"\n'
+                   '$bye - прощание бота\n'
                    '$revers <произвольное слово> - вывод слова в обратной последовательности')
 
-bot.run("MTEyNDcyMzQ5Nzk5OTAyODMzNg.Gf4Vmj.ZwfWbbtYUjPkU2BZC33YWDtvCmJd9FcujnH0iE")
+bot.run("MTEyOTgxMjYxMTAyMjcyNTIzMQ.GgwTn4.pMmsF0KrdtNMIipijEMumS8MRis9zz0XfBXwaQ")
 
  
+
+
 
